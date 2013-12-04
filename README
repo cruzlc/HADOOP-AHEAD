@@ -2,7 +2,7 @@ Data input
 ==========
 The input file must be a plain text file with a graph represented as follows:
 
-- Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's list of neighbours. Each neighbour must have be separated by semicolons. 
+- Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's list of neighbours. Each neighbour must be separated by semicolons. 
  
 Example:
 
