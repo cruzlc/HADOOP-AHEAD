@@ -1,8 +1,9 @@
 Data input
 ==========
-The input file must be a plain text file with a graph represented as follows:
+The input file must be a plain text file with a graph G(V,E) --- V being a set of Vertexes and E being a set of Edges --- represented as follows:
 
-- Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's list of neighbours. Each neighbour must be separated by semicolons. 
+- Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's neighbours list.
+- Each neighbour must be separated by semicolons. 
  
 Example:
 
@@ -13,11 +14,19 @@ Example:
                                 .
 #vertex_nameN neighbour_name1;neighbour_name2;...;last_neighbour
 
-The neighbour's names should be the same as the vertex's names that follows the "#" character, meaning that each neighbour may have its own list of neighbours.
+This is a adjacency list representation, and therefore the neighbour's names should be the same as one of the vertex's names followed by the "#" character, meaning that each neighbour may have its own list of neighbours. In other words, each neighbour may also appear followed by a "#" character in the first column.
+
+As should be noted, this is an unweighted graph, and this first public version of AHEAD deals only with this type of graph.
+
+How to build AHEAD
+==================
+
+The program is built under Apache Ant build tool. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the plataform (Hadoop), needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and should be edited to fit with your Hadoop system.
+Examples of variables are
 
 How to run AHEAD
 ================
 
-This first version was tested using scripts that automatically execute usual Hadoop command lines. Therefore, the script that starts AHEAD should be edit/adjusted accordingly with your Hadoop setup.
+This first public version was tested using scripts that automatically execute usual Hadoop command lines. Therefore, the script that starts AHEAD should be edit/adjusted accordingly with your Hadoop setup.
 
 The script's name is "run_AHEAD.sh" and you can use it by typing "./run_PBFS.sh -r <numero de reducers> -c <caminho do arquivo>" where "numero de reducers" is the number of reducers desired and "caminho do arquivo" is the path of the Graph file (which format was decribed above).
