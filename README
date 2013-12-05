@@ -3,6 +3,7 @@ Data input
 The input file must be a plain text file with a graph G(V,E) --- V being a set of Vertexes and E being a set of Edges --- represented as follows:
 
 - Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's neighbours list.
+
 - Each neighbour must be separated by semicolons. 
  
 Example:
@@ -21,8 +22,10 @@ As should be noted, this is an unweighted graph, and this first public version o
 How to build AHEAD
 ==================
 
-The program is built under Apache Ant build tool. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the plataform (Hadoop), needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and should be edited to fit with your Hadoop system.
-Examples of variables are
+The program is built under Apache's building tool Ant. Therefore Ant must be installed in your system. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the system used, needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and should be edited to fit with your Hadoop system.
+Examples of variables are Hadoop version, path of the Hadoop binaries, path of the AHEAD source files, etc.
+
+There is a script called build_AHEAD.sh with the purpose of to execute Ant commands and build AHEAD automatically.
 
 How to run AHEAD
 ================
