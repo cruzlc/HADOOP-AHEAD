@@ -25,7 +25,7 @@ How to build AHEAD
 The program is built under Apache's building tool Ant. Therefore Ant must be installed in your system. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the system used, needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and should be edited to fit with your Hadoop system.
 Examples of variables are Hadoop version, path of the Hadoop binaries, path of the AHEAD source files, etc.
 
-There is a script called build_AHEAD.sh with the purpose of to execute Ant commands and build AHEAD automatically.
+There is a script called build_AHEAD.sh with the purpose of to execute Ant commands and build AHEAD automatically. To use it, just type "./build_AHEAD.sh".
 
 How to run AHEAD
 ================
