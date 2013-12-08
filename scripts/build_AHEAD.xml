@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AHEAD" default="makejar">
+
+<description>
+Algoritmo AHEAD
+</description>
+
+<property name="basedir" location="." />
+<property name="src.dir" location="${basedir}/src" />
+<property name="build.dir" location="${basedir}/classes"/>
+<property name="hadoop.version" value="1.1.2-SNAPSHOT"/>
+<property name="hadoop.dir" value="/opt/hadoop"/>
+<property name="app.jar" location="${basedir}/AHEAD.jar"/>
+
+
+<!-- classpath definitions -->
+<path id="build.classpath">
+<pathelement location="${build.dir}"/>
+<pathelement location="${hadoop.dir}/hadoop-core-${hadoop.version}.jar"/> 
+</path>
+    
+<target name="compile" description="compile all Java classes">
+<mkdir dir="${build.dir}"/>
+<javac classpathref="build.classpath" destdir="${build.dir}" debug="on" deprecation="on">
+<src path="${src.dir}"/>
+</javac>
+</target>
+
+<target name="makejar" description="wrap the application class in a JAR file" depends="compile">
+<jar destfile="${app.jar}" basedir="${build.dir}"/>
+</target>
+
+</project>
