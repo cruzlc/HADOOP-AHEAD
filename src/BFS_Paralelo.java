@@ -14,6 +14,7 @@ Dissertação (Mestrado em Modelagem Matemática e Computacional)
 Centro Federal de Educação Tecnológica de Minas Gerais, . Orientador: Cristina Duarte Murta.
 
 */
+
 package AHEAD;
 
 import java.io.BufferedReader;
