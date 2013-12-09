@@ -1,5 +1,14 @@
+AHEAD
+=====
+
+Advanced Hadoop Exact Algorithm for Distances ——- AHEAD ——- is a program to run over Hadoop platform in order to calculate radius and diameter of big graphs. The size of the graphs tested so far, in a small cluster (6 nodes, 2TB of space per node — see documentation), are graphs with hundreds of thousands vertexes and millions of edges. 
+
+The graphs must be unweighted and if it’s not connected, the values of radius and diameter returned are those belonging to the smallest connected component and highest connected component respectively.
+
+
 Data input
 ==========
+
 The input file must be a plain text file with a graph G(V,E) --- V being a set of Vertexes and E being a set of Edges --- represented as follows:
 
 - Each line of the file must have the character "#" followed by a vertex, a space and then the vertex's neighbours list.
@@ -15,21 +24,21 @@ Example:
                                 .
 #vertex_nameN neighbour_name1;neighbour_name2;...;last_neighbour
 
-This is a adjacency list representation, and therefore the neighbour's names should be the same as one of the vertex's names followed by the "#" character, meaning that each neighbour may have its own list of neighbours. In other words, each neighbour may also appear followed by a "#" character in the first column.
+This is an adjacency list representation, and therefore the neighbour's names should be the same as one of the vertex's names followed by the "#" character, meaning that each neighbour may have its own list of neighbours. In other words, each neighbour may also appear followed by a "#" character in the first column.
 
 As should be noted, this is an unweighted graph, and this first public version of AHEAD deals only with this type of graph.
 
 How to build AHEAD
 ==================
 
-The program is built under Apache's building tool Ant. Therefore Ant must be installed in your system. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the system used, needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and should be edited to fit with your Hadoop system.
-Examples of variables are Hadoop version, path of the Hadoop binaries, path of the AHEAD source files, etc.
+The program is built under Apache's building tool Ant. Therefore Ant must be installed in your system. It is a tiny and simple build project, which its purpose is to facilitate the setup of variables related to the system, needed to build AHEAD (or any program written for Hadoop). The build project is defined by the file build_AHEAD.xml and it should be edited to fit with your Hadoop system.
+Examples of variables in build_AHEAD.xml are Hadoop version, path of the Hadoop binaries, path of the AHEAD source files, etc.
 
 There is a script called build_AHEAD.sh with the purpose of to execute Ant commands and build AHEAD automatically. To use it, just type "./build_AHEAD.sh".
 
 How to run AHEAD
 ================
 
-This first public version was tested using scripts that automatically execute usual Hadoop command lines. Therefore, the script that starts AHEAD should be edit/adjusted accordingly with your Hadoop setup.
+This first public version was tested using scripts that automatically execute usual Hadoop command lines. Therefore, the script that runs AHEAD should be edit/adjusted accordingly with your Hadoop setup.
 
 The script's name is "run_AHEAD.sh" and you can use it by typing "./run_PBFS.sh -r <numero de reducers> -c <caminho do arquivo>" where "numero de reducers" is the number of reducers desired and "caminho do arquivo" is the path of the Graph file (which format was decribed above).
